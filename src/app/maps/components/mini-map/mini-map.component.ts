@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-mini-map',
+  selector: 'maps-mini-map',
   templateUrl: './mini-map.component.html',
-  styleUrls: ['./mini-map.component.sass']
+  styleUrls: ['./mini-map.component.scss'],
 })
-export class MiniMapComponent {
-
-}
+export class MiniMapComponent {}
