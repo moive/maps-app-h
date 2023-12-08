@@ -8,7 +8,7 @@ describe('MiniMapComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MiniMapComponent]
+      declarations: [MiniMapComponent],
     });
     fixture = TestBed.createComponent(MiniMapComponent);
     component = fixture.componentInstance;
