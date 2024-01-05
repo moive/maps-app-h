@@ -3,9 +3,10 @@
 <ul class="list-group">
   <li
     class="list-group-item"
-    *ngFor="let marker of markers; let i = index"
-    [ngStyle]="{backgroundColor: marker.color, color: 'white'}"
+    *ngFor="let item of markers; let i = index"
+    [ngStyle]="{backgroundColor: item.color, color: 'white'}"
     (dblclick)="deleteMarker(i)"
+    (click)="flyTo(item.marker)"
   >Marker {{i + 1}}</li>
 </ul>
 
