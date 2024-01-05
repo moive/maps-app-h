@@ -14,4 +14,7 @@ button {
   top: 20px;
   right: 20px;
   cursor: pointer;
+  &-item {
+      user-select: none;
+    }
 }
