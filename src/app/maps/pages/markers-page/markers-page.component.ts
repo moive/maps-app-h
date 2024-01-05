@@ -8,9 +8,9 @@ import { Map, LngLat, Marker } from 'mapbox-gl';
 export class MarkersPageComponent {
   @ViewChild('map') divMap?: ElementRef;
 
-  zoom: number = 10;
+  zoom: number = 13;
   map?: Map;
-  currentLngLat: LngLat = new LngLat(-77.137, -11.8276);
+  currentLngLat: LngLat = new LngLat(-77.125, -11.8294);
   lng: number = this.currentLngLat.lng;
   lat: number = this.currentLngLat.lat;
 
@@ -23,7 +23,7 @@ export class MarkersPageComponent {
       zoom: this.zoom, // starting zoom
     });
 
-    const markerHtml = document.createElement('div');
+    /* const markerHtml = document.createElement('div');
     markerHtml.innerHTML = '😀';
 
     const marker = new Marker({
@@ -31,6 +31,27 @@ export class MarkersPageComponent {
       // element: markerHtml,
     })
       .setLngLat(this.currentLngLat)
+      .addTo(this.map); */
+  }
+
+  createMarker(): void {
+    if (!this.map) return;
+
+    const color = '#xxxxxx'.replace(/x/g, y =>
+      ((Math.random() * 16) | 0).toString(16)
+    );
+    const lngLat = this.map.getCenter();
+    this.addMarker(lngLat, color);
+  }
+
+  addMarker(lngLat: LngLat, color: string): void {
+    if (!this.map) return;
+
+    const marker = new Marker({
+      color,
+      draggable: true,
+    })
+      .setLngLat(lngLat)
       .addTo(this.map);
   }
 }

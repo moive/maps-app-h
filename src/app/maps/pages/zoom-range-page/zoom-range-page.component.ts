@@ -16,7 +16,7 @@ export class ZoomRangePageComponent implements AfterViewInit, OnDestroy {
 
   zoom: number = 10;
   map?: Map;
-  currentLngLat: LngLat = new LngLat(-77.137, -11.8276);
+  currentLngLat: LngLat = new LngLat(-77.125, -11.8294);
   lng: number = this.currentLngLat.lng;
   lat: number = this.currentLngLat.lat;
 
